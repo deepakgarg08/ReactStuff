@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Styling Components</title>
+</head>
+<body>
+<div id="app">React has not rendered yet</div>
+
+<script type="text/babel">
+
+    var ColorAll = function (props) {
+        var colorStyle = {
+            height: 50,
+            width: 150,
+            backgroundColor: props.color
+
+        }
+        return< h1 style={colorStyle}>{props.name}</h1>
+    }
+
+    ReactDOM.render(
+        // REACT WHAT
+        <div>
+             <ColorAll  color="red" name="Red"/>
+             <ColorAll  color="Orange" name="Orange"/>
+             <ColorAll  color="Yellow" name="Yellow"/>
+             <ColorAll  color="Green" name="Green"/>
+             <ColorAll  color="Blue" name="Blue"/>
+             <ColorAll  color="Indigo" name="Indigo"/>
+             <ColorAll  color="Violet" name="Violet"/>
+        </div>,
+        document.getElementById("app")
+    );
+
+
+
+//second way but inefficient
+
+    /*class ColorAll  extends React.Component{
+        render(){
+            var colorStyle = {
+                height: 50,
+                width: 150,
+                //backgroundColor: "red"
+                backgroundColor: this.props.color
+
+            }
+            return(
+                <div style={colorStyle}> {this.props.name}! </div>
+            );
+        }
+    }
+
+    var ColorSpectrum = function() {
+        return(
+            <div>
+                <h1>  <ColorAll  color="red" name="Red"/></h1>
+                <h1>  <ColorAll  color="Orange" name="Orange"/></h1>
+                <h1>  <ColorAll  color="Yellow" name="Yellow"/></h1>
+                <h1>  <ColorAll  color="Green" name="Green"/></h1>
+                <h1>  <ColorAll  color="Blue" name="Blue"/></h1>
+                <h1>  <ColorAll  color="Indigo" name="Indigo"/></h1>
+                <h1>  <ColorAll  color="Violet" name="Violet"/></h1>
+            </div>
+        );
+    }
+
+    var Red = function() {
+
+
+    }
+
+    var Orange = function() {
+
+
+    }
+
+    var Yellow = function() {
+
+    }
+
+    var Green = function() {
+
+    }
+
+    var Blue = function() {
+
+    }
+
+    var Indigo = function() {
+
+    }
+
+    var Violet = function() {
+
+    }
+
+    ReactDOM.render(
+        // REACT WHAT
+        <ColorSpectrum/>,
+        document.getElementById("app")
+    );*/
+
+</script>
+</body>
+</html>
